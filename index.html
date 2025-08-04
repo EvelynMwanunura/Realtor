@@ -8,9 +8,9 @@
       body {
         margin: 0;
         padding: 0;
-        background-color: white;
+        background-color: rgb(44, 60, 76);
         font-family: Arial, sans-serif;
-        color: #333;
+        color: white;
       }
 
       /* Your existing styles... */
@@ -19,7 +19,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 10px 20px;
-        background-color: black;
+        background-color: rgb(44, 60, 76);
       }
 
       nav ul {
@@ -44,7 +44,7 @@
 
       .intro {
         position: relative;
-        height: 600px;
+        height: 750px;
       }
 
       .intro::before {
@@ -113,15 +113,19 @@
 
       /* About section as one row grid with 4 columns */
       .about {
-        max-width: 100%;
+        /*max-width: 100%;
         margin: 25px 0 10px 0;
         padding: 0 20px;
         display: grid;
         grid-template-columns: 100px 1fr 100px 1fr;
         gap: 40px;
         align-items: start;
-        column-gap: 60px;
-        border: 1px solid black;
+        column-gap: 60px;*/
+
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        padding: 20px;
       }
 
       .person-image {
@@ -150,6 +154,17 @@
         line-height: 1.5;
         color: #222;
       }
+      .person-container {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 20px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        background-color: white;
+        color: black;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
 
       /* Responsive - stack on small screens */
       @media (max-width: 900px) {
@@ -165,12 +180,21 @@
           margin-bottom: 30px;
         }
       }
+
+      .section-title {
+        text-align: center;
+        margin-top: 20px;
+      }
     </style>
   </head>
   <body>
     <section class="headings">
       <header>
-        <img class="logo" src="./Realtorslogo.jpg" alt="Realtors Logo" />
+        <img
+          class="logo"
+          src="./Realtorslogo-removebg-preview.png"
+          alt="Realtors Logo"
+        />
         <nav>
           <ul>
             <li><a href="#">About Us</a></li>
@@ -186,7 +210,7 @@
       <div class="intro-text">
         <h1>Your Trusted Property Partners</h1>
         <p>
-          Meet Suzelle Pronk &amp; Sandra Crous — Experts in Cape Town Real
+          Meet Suzelle Pronk &amp; Sandra Crous, Experts in Cape Town Real
           Estate
         </p>
         <a href="#contact" class="cta-button">Book a Consultation</a>
@@ -195,64 +219,60 @@
       <img class="suzelle" src="./suzelle.png" alt="Suzelle Pronk" />
       <img class="sandra" src="./sandra.png" alt="Sandra Crous" />
     </section>
+    <h1 class="section-title">About Us</h1>
 
     <section class="about" aria-label="About the team">
       <!-- Suzelle photo -->
-      <img
-        class="person-image"
-        src="./suzelle.png"
-        alt="Suzelle Pronk"
-        loading="lazy"
-      />
-      <!-- Suzelle text -->
-      <div class="person-text">
-        <em>
-          Helping people find their place and feel at home, every step of the
-          way.
-        </em>
-        <p>
-          I’ve been proudly working in real estate since 2004, and after all
-          these years, what still drives me is simple: I love working with
-          people. Many of my clients have become lifelong friends a testament to
-          the relationships I build through honesty, transparency, and genuine
-          care. My motto is straightforward: always put the client’s interests
-          first. Whether I’m helping buyers step into the home they’ve always
-          dreamed of, or supporting sellers through a smooth, stress-free move,
-          I believe every step should be guided by trust, empathy, and clear
-          communication. For me, real estate isn’t just about properties it’s
-          about people, lasting relationships, and making life-changing moments
-          feel truly special.
-        </p>
+      <div class="person-container">
+        <img class="person-image" src="./suzelle.png" alt="Suzelle Pronk" />
+        <!-- Suzelle text -->
+        <div class="person-text">
+          <em>
+            Helping people find their place and feel at home, every step of the
+            way.
+          </em>
+          <p>
+            I’ve been proudly working in real estate since 2004, and after all
+            these years, what still drives me is simple: I love working with
+            people. Many of my clients have become lifelong friends a testament
+            to the relationships I build through honesty, transparency, and
+            genuine care. My motto is straightforward: always put the client’s
+            interests first. Whether I’m helping buyers step into the home
+            they’ve always dreamed of, or supporting sellers through a smooth,
+            stress-free move, I believe every step should be guided by trust,
+            empathy, and clear communication. For me, real estate isn’t just
+            about properties it’s about people, lasting relationships, and
+            making life-changing moments feel truly special.
+          </p>
+        </div>
       </div>
-
-      <!-- Sandra photo -->
-      <img
-        class="person-image"
-        src="./sandra.png"
-        alt="Sandra Crous"
-        loading="lazy"
-      />
-      <!-- Sandra text -->
-      <div class="person-text">
-        <em>
-          Real estate is more than just property it's about people,
-          relationships, and trust.
-        </em>
-        <p>
-          Since 2015, I’ve proudly served the real estate industry with a deep
-          passion for people and a genuine commitment to helping clients find
-          their perfect home. My approach is rooted in honesty, integrity, and a
-          relentless drive to give my best in every transaction. Before entering
-          real estate, I spent several years running my own business in the
-          beauty industry, followed by a rewarding chapter co-owning a cozy
-          coffee and cake shop with my mother. These experiences shaped my
-          client-first mindset and taught me the true value of service,
-          attention to detail, I bring to every step of the property journey.
-          When you become my client, you also become my friend.
-        </p>
+      <div class="person-container">
+        <!-- Sandra photo -->
+        <img class="person-image" src="./sandra.png" alt="Sandra Crous" />
+        <!-- Sandra text -->
+        <div class="person-text">
+          <em>
+            Real estate is more than just property it's about people,
+            relationships, and trust.
+          </em>
+          <p>
+            Since 2015, I’ve proudly served the real estate industry with a deep
+            passion for people and a genuine commitment to helping clients find
+            their perfect home. My approach is rooted in honesty, integrity, and
+            a relentless drive to give my best in every transaction. Before
+            entering real estate, I spent several years running my own business
+            in the beauty industry, followed by a rewarding chapter co-owning a
+            cozy coffee and cake shop with my mother. These experiences shaped
+            my client-first mindset and taught me the true value of service,
+            attention to detail, I bring to every step of the property journey.
+            When you become my client, you also become my friend.
+          </p>
+        </div>
       </div>
     </section>
 
-    <section class="properties"></section>
+    <section id="properties" class="properties"></section>
+
+    <script type="module" src="./index.js"></script>
   </body>
 </html>
