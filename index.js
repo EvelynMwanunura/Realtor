@@ -1,5 +1,14 @@
 class Property {
-  constructor(images, title, location, price, bedrooms, bathrooms, parking) {
+  constructor(
+    images,
+    title,
+    location,
+    price,
+    bedrooms,
+    bathrooms,
+    parking,
+    link
+  ) {
     this.images = images; // array of image paths
     this.title = title;
     this.location = location;
@@ -7,6 +16,7 @@ class Property {
     this.bedrooms = bedrooms;
     this.bathrooms = bathrooms;
     this.parking = parking;
+    this.link = link;
   }
 
   render() {
@@ -69,10 +79,18 @@ class Property {
       }</li>
     `;
 
+    const button = document.createElement("button");
+    button.classList.add("view-details");
+    button.textContent = "View Details";
+    button.addEventListener("click", () => {
+      window.location.href = this.link;
+    });
+
     details.appendChild(title);
     details.appendChild(location);
     details.appendChild(price);
     details.appendChild(featuresList);
+    details.appendChild(button);
 
     propertyCard.appendChild(slider);
     propertyCard.appendChild(details);
@@ -95,7 +113,8 @@ const propertiesForSale = [
     6495000,
     6,
     4,
-    true
+    true,
+    "https://www.realtorsinternational.co.za/results/residential/for-sale/bellville/loevenstein/house/17460/"
   ),
   new Property(
     [

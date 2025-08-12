@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Property Partners Landing Page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
     <style>
       body {
         margin: 0;
@@ -113,15 +117,6 @@
 
       /* About section as one row grid with 4 columns */
       .about {
-        /*max-width: 100%;
-        margin: 25px 0 10px 0;
-        padding: 0 20px;
-        display: grid;
-        grid-template-columns: 100px 1fr 100px 1fr;
-        gap: 40px;
-        align-items: start;
-        column-gap: 60px;*/
-
         display: flex;
         flex-direction: row;
         gap: 30px;
@@ -321,14 +316,14 @@
         text-align: center;
         max-width: 100%;
         margin: 20px;
-        padding: 20px;
+
         border-radius: 8px;
       }
 
       .properties-section h2 {
         font-size: 2.5rem;
         margin-bottom: 40px;
-        color: #333;
+        color: white;
       }
 
       .properties-grid {
@@ -336,7 +331,6 @@
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 30px;
         margin-top: 30px;
-        padding: 0 20px;
       }
 
       .property-card {
@@ -348,7 +342,7 @@
 
       .property-card img {
         width: 100%;
-        height: 200px;
+        height: 400px;
         object-fit: cover;
       }
 
@@ -402,7 +396,7 @@
       .blog-section h2 {
         font-size: 2.5rem;
         margin-bottom: 40px;
-        color: #333;
+        color: white;
       }
 
       .blog-container {
@@ -465,8 +459,9 @@
         background-color: #f4f4f4;
         padding: 60px 20px;
         text-align: center;
-        max-width: 1200px;
-        margin: 0 auto;
+        max-width: 100%;
+        margin: 20px;
+        border-radius: 8px;
       }
 
       .contact-section h2 {
@@ -561,6 +556,7 @@
         width: 100%;
         display: block;
         border-radius: 8px;
+        height: 400px;
       }
 
       .property-slider button {
@@ -581,6 +577,18 @@
 
       .property-slider .next {
         right: 10px;
+      }
+      .view-details {
+        background-color: #007bff;
+        border: none;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .view-details:hover {
+        background-color: #0056b3;
       }
     </style>
   </head>
@@ -613,7 +621,7 @@
         <a href="#contact" class="cta-button">Book a Consultation</a>
       </div>
 
-      <img class="suzelle" src="./suzelle.png" alt="Suzelle Pronk" />
+      <img class="suzelle" src="./#" alt="Suzelle Pronk" />
       <img class="sandra" src="./sandra.png" alt="Sandra Crous" />
     </section>
     <h1 class="section-title">About Us</h1>
@@ -621,7 +629,7 @@
     <section class="about" aria-label="About the team">
       <!-- Suzelle photo -->
       <div class="person-container">
-        <img class="person-image" src="./suzelle.png" alt="Suzelle Pronk" />
+        <img class="person-image" src="./photo.png" alt="Suzelle Pronk" />
         <!-- Suzelle text -->
         <div class="person-text">
           <h4>Suzelle Pronk</h4>
@@ -718,9 +726,11 @@
     <section id="contact" class="contact-section">
       <h2>Contact Us</h2>
       <div class="contact-form-container">
+        <!-- Form-->
+        <!---->
         <form id="contactForm">
           <div class="form-group">
-            <label for="name">Name:</label>
+            <label for="name">Full Name:</label>
             <input type="text" id="name" name="name" required />
           </div>
           <div class="form-group">
