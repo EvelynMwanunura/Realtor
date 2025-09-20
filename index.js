@@ -1,3 +1,79 @@
+// Realtor Project Modal and Button Logic
+// Show callback form modal
+const callbackBtn = document.getElementById('request-callback-btn');
+if (callbackBtn) {
+  callbackBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.getElementById('callback-form-modal').style.display = 'flex';
+  });
+}
+
+// Hide callback form modal
+const closeCallbackBtn = document.getElementById('close-callback-form');
+if (closeCallbackBtn) {
+  closeCallbackBtn.addEventListener('click', function() {
+    document.getElementById('callback-form-modal').style.display = 'none';
+  });
+}
+
+// Hide callback modal when clicking outside the form
+const callbackModal = document.getElementById('callback-form-modal');
+if (callbackModal) {
+  callbackModal.addEventListener('click', function(e) {
+    if (e.target === this) {
+      this.style.display = 'none';
+    }
+  });
+}
+
+// Enforce 10-digit cell number for callback form
+const cbCell = document.getElementById('cb-cell');
+if (cbCell) {
+  cbCell.addEventListener('input', function() {
+    if (this.value.length > 10) {
+      this.value = this.value.slice(0, 10);
+    }
+  });
+}
+
+// Show assessment form modal when "Free Property Assessment" is clicked
+const assessmentLinks = Array.from(document.querySelectorAll('a')).filter(link => link.textContent.trim() === 'Free Property Assessment');
+assessmentLinks.forEach(function(link) {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.getElementById('assessment-form-modal').style.display = 'flex';
+  });
+});
+
+// Hide assessment form modal
+const closeAssessmentBtn = document.getElementById('close-assessment-form');
+if (closeAssessmentBtn) {
+  closeAssessmentBtn.addEventListener('click', function() {
+    document.getElementById('assessment-form-modal').style.display = 'none';
+  });
+}
+
+// Hide assessment modal when clicking outside the form
+const assessmentModal = document.getElementById('assessment-form-modal');
+if (assessmentModal) {
+  assessmentModal.addEventListener('click', function(e) {
+    if (e.target === this) {
+      this.style.display = 'none';
+    }
+  });
+}
+
+// Enforce 10-digit cell number for assessment form
+const assessCell = document.getElementById('assess-cell');
+if (assessCell) {
+  assessCell.addEventListener('input', function() {
+    if (this.value.length > 10) {
+      this.value = this.value.slice(0, 10);
+    }
+  });
+}
+
+// ...existing property rendering code below...
 class Property {
   constructor(
     images,
