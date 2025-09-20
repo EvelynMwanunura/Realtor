@@ -7,8 +7,6 @@ body {
   font-family: Arial, sans-serif;
   color: white;
 /* Modal form backgrounds and forms */
-.modal-form-bg {
-}
 
 .headings header {
   display: flex;
@@ -31,16 +29,12 @@ nav ul {
   margin: 0;
   padding: 0;
   position: relative;
-.modal-form h2 {
-}
 nav li a {
   text-decoration: none;
   padding: 15px;
 .modal-form .form-group {
   color: white;
   font-weight: bold;
-.modal-form label {
-}
 nav li {
   position: relative;
 }
@@ -60,8 +54,6 @@ nav .dropdown-content {
   top: 100%;
   left: 0;
   border-radius: 0 0 8px 8px;
-.modal-form .button {
-}
 nav .dropdown-content li {
   display: block;
 }
@@ -112,16 +104,12 @@ nav .dropdown:hover .dropdown-content {
   width: 250px;
   height: auto;
   bottom: 0;
-.aside-form h2 {
-}
 .suzelle {
   left: 20px;
 }
 .aside-form .form-group {
 .sandra {
   right: 20px;
-.aside-form label {
-}
 
 .intro-text {
   position: absolute;
@@ -137,8 +125,6 @@ nav .dropdown:hover .dropdown-content {
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 10px;
   max-width: 90%;
-.aside-form textarea {
-}
 
 .intro-text h1 {
 .aside-form .button {
