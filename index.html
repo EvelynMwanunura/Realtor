@@ -690,21 +690,21 @@
         <a href="#contact" class="cta-button">Book a Consultation</a>
   <a href="#contact" class="cta-button" id="request-callback-btn">Request a Call Back</a>
     <!-- Request a Call Back Modal Form -->
-    <div id="callback-form-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.6); z-index:1000; align-items:center; justify-content:center;">
-      <form id="callback-form" style="background:white; color:black; padding:30px; border-radius:10px; min-width:320px; max-width:90vw; margin:auto; position:relative;">
-        <button type="button" id="close-callback-form" style="position:absolute; top:10px; right:10px; background:none; border:none; font-size:1.5rem; cursor:pointer;">&times;</button>
+    <div id="callback-form-modal" class="modal-form-bg">
+      <form id="callback-form" class="modal-form">
+        <button type="button" id="close-callback-form" class="close-modal">&times;</button>
         <h2>Request a Call Back</h2>
         <div class="form-group">
           <label for="cb-fullname">Full Name:</label>
-          <input type="text" id="cb-fullname" name="fullname" required />
+          <input type="text" id="cb-fullname" name="fullname" placeholder="Enter your full name" required />
         </div>
         <div class="form-group">
           <label for="cb-cell">Cell Number:</label>
-          <input type="number" id="cb-cell" name="cell" maxlength="10" pattern="\d{10}" required />
+          <input type="number" id="cb-cell" name="cell" maxlength="10" placeholder="Enter your contact number" required />
         </div>
         <div class="form-group">
           <label for="cb-email">Email Address:</label>
-          <input type="email" id="cb-email" name="email" required />
+          <input type="email" id="cb-email" name="email" placeholder="Enter your email address" required />
         </div>
         <div class="form-group">
           <label for="cb-area">Area:</label>
@@ -721,6 +721,28 @@
 
       <img class="suzelle" src="./#" alt="Suzelle Pronk" />
       <img class="sandra" src="./sandra.png" alt="Sandra Crous" />
+      <aside class="contact-aside">
+        <form id="aside-contact-form" class="aside-form">
+          <h2>Contact Us</h2>
+          <div class="form-group">
+            <label for="aside-name">Full Name:</label>
+            <input type="text" id="aside-name" name="name" placeholder="Enter your full name" required />
+          </div>
+          <div class="form-group">
+            <label for="aside-cell">Cell Number:</label>
+            <input type="number" id="aside-cell" name="cell" placeholder="Enter your cell number" required />
+          </div>
+          <div class="form-group">
+            <label for="aside-buysell">Buy/Sell:</label>
+            <input type="text" id="aside-buysell" name="buysell" placeholder="Want to buy or sell" required />
+          </div>
+          <div class="form-group">
+            <label for="aside-message">Message:</label>
+            <textarea id="aside-message" name="message" placeholder="Enter your message" required></textarea>
+          </div>
+          <button type="submit" class="button">Send</button>
+        </form>
+      </aside>
     </section>
     <h1 class="section-title">About Us</h1>
 
