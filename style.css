@@ -1,25 +1,18 @@
-/* Realtor Project Styles */
-
 body {
   margin: 0;
   padding: 0;
   background-color: rgb(44, 60, 76);
   font-family: Arial, sans-serif;
   color: white;
-/* Modal form backgrounds and forms */
+}
 
+/* Your existing styles... */
 .headings header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
   background-color: rgb(44, 60, 76);
-  position: static;
-  top: 0;
-  left: 0;
-.modal-form {
-  width: 100%;
-  z-index: 100;
 }
 
 nav ul {
@@ -29,18 +22,19 @@ nav ul {
   margin: 0;
   padding: 0;
   position: relative;
+}
+
 nav li a {
   text-decoration: none;
   padding: 15px;
-.modal-form .form-group {
   color: white;
   font-weight: bold;
+}
+
 nav li {
   position: relative;
 }
 nav li .fa-caret-down {
-.modal-form input,
-.modal-form textarea {
   margin-left: 5px;
 }
 nav .dropdown-content {
@@ -48,12 +42,12 @@ nav .dropdown-content {
   position: absolute;
   background-color: rgb(44, 60, 76);
   min-width: 200px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 10;
-.modal-form textarea {
   top: 100%;
   left: 0;
   border-radius: 0 0 8px 8px;
+}
 nav .dropdown-content li {
   display: block;
 }
@@ -65,10 +59,8 @@ nav .dropdown-content li a {
 }
 nav .dropdown-content li a:hover {
   background-color: #ba872a;
-.modal-form .button:hover {
   color: #fff;
 }
-.close-modal {
 nav .dropdown:hover .dropdown-content {
   display: block;
 }
@@ -80,19 +72,16 @@ nav .dropdown:hover .dropdown-content {
 
 .intro {
   position: relative;
-.intro-section {
   height: 750px;
 }
 
 .intro::before {
   content: "";
   position: absolute;
-.intro {
   inset: 0;
   background-image: url(./hero-bg.jpeg);
   background-size: cover;
   background-position: center;
-.contact-aside {
   filter: blur(1px);
   z-index: 0;
 }
@@ -104,18 +93,17 @@ nav .dropdown:hover .dropdown-content {
   width: 250px;
   height: auto;
   bottom: 0;
+}
 .suzelle {
   left: 20px;
 }
-.aside-form .form-group {
 .sandra {
   right: 20px;
+}
 
 .intro-text {
   position: absolute;
   top: 20%;
-.aside-form input,
-.aside-form textarea {
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -125,9 +113,9 @@ nav .dropdown:hover .dropdown-content {
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 10px;
   max-width: 90%;
+}
 
 .intro-text h1 {
-.aside-form .button {
   font-size: 2.5rem;
   margin-bottom: 10px;
 }
@@ -140,7 +128,6 @@ nav .dropdown:hover .dropdown-content {
 .cta-button {
   background-color: #ffffff;
   color: #000;
-.aside-form .button:hover {
   padding: 12px 25px;
   text-decoration: none;
   font-weight: bold;
@@ -152,6 +139,7 @@ nav .dropdown:hover .dropdown-content {
   background-color: #ccc;
 }
 
+/* About section as one row grid with 4 columns */
 .about {
   display: flex;
   flex-direction: row;
@@ -197,6 +185,7 @@ nav .dropdown:hover .dropdown-content {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Responsive - stack on small screens */
 @media (max-width: 900px) {
   .about {
     grid-template-columns: 1fr;
@@ -236,6 +225,7 @@ nav .dropdown:hover .dropdown-content {
   border-radius: 5px;
 }
 
+/* Container layout */
 .listings {
   background: #eee;
   display: grid;
@@ -253,12 +243,14 @@ nav .dropdown:hover .dropdown-content {
   }
 }
 
+/* Listing card */
 .listing {
   background: #fff;
   border-radius: 4px;
   overflow: hidden;
 }
 
+/* Image section */
 .listing-img {
   position: relative;
 }
@@ -287,6 +279,7 @@ nav .dropdown:hover .dropdown-content {
   margin-right: 1px;
 }
 
+/* Title & address */
 .listing-title {
   padding: 0.5rem;
 }
@@ -294,6 +287,7 @@ nav .dropdown:hover .dropdown-content {
   padding: 0 0.5rem 0.5rem;
 }
 
+/* Icons */
 .listing-icons {
   display: flex;
   justify-content: space-between;
@@ -310,6 +304,7 @@ nav .dropdown:hover .dropdown-content {
   text-align: center;
 }
 
+/* Footer */
 .listing-footer {
   border-top: 1px solid rgba(204, 204, 204, 0.4);
   display: flex;
@@ -338,12 +333,14 @@ nav .dropdown:hover .dropdown-content {
   text-decoration: none;
 }
 
+/* Properties Section */
 .properties-section {
   background-color: rgb(44, 60, 76);
   padding: 60px 20px;
   text-align: center;
   max-width: 100%;
   margin: 20px;
+
   border-radius: 8px;
 }
 
@@ -412,6 +409,7 @@ nav .dropdown:hover .dropdown-content {
   margin-top: 40px;
 }
 
+/* Blog Section */
 .blog-section {
   padding: 60px 20px;
   text-align: center;
@@ -480,6 +478,7 @@ nav .dropdown:hover .dropdown-content {
   text-decoration: underline;
 }
 
+/* Contact Section */
 .contact-section {
   background-color: #f4f4f4;
   padding: 60px 20px;
@@ -604,7 +603,7 @@ nav .dropdown:hover .dropdown-content {
   right: 10px;
 }
 .view-details {
-  background-color: #007bff;
+  background-color: rgb(44, 60, 76);
   border: none;
   color: white;
   padding: 10px 15px;
@@ -613,58 +612,15 @@ nav .dropdown:hover .dropdown-content {
 }
 
 .view-details:hover {
-  background-color: #0056b3;
+  background-color: rgb(44, 60, 76);
 }
 
-/* Modal forms */
-#callback-form-modal,
-#assessment-form-modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0,0,0,0.6);
-  z-index: 1000;
-  align-items: center;
-  justify-content: center;
-}
-#callback-form,
-#assessment-form {
-  background: white;
-  color: black;
-  padding: 30px;
-  border-radius: 10px;
-  min-width: 320px;
-  max-width: 90vw;
-  margin: auto;
-  position: relative;
-}
-#assessment-form {
-  min-width: 420px;
-}
-#callback-form button,
-#assessment-form button {
-  background: #ba872a;
-  color: #fff;
-  border: none;
+.button {
+  text-decoration: none;
+  display: inline-block;
   padding: 10px 20px;
+  background-color: rgb(44, 60, 76);
+  color: white;
   border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-}
-#callback-form button:hover,
-#assessment-form button:hover {
-  background: #8a641a;
-}
-#close-callback-form,
-#close-assessment-form {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
