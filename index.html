@@ -1,3 +1,31 @@
+    <!-- Free Property Assessment Modal Form -->
+    <div id="assessment-form-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.6); z-index:1000; align-items:center; justify-content:center;">
+      <form id="assessment-form" style="background:white; color:black; padding:30px; border-radius:10px; min-width:320px; max-width:90vw; margin:auto; position:relative;">
+        <button type="button" id="close-assessment-form" style="position:absolute; top:10px; right:10px; background:none; border:none; font-size:1.5rem; cursor:pointer;">&times;</button>
+        <h2>Free Property Assessment</h2>
+        <div class="form-group">
+          <label for="assess-fullname">Full Name:</label>
+          <input type="text" id="assess-fullname" name="fullname" placeholder="Enter your full name" required />
+        </div>
+        <div class="form-group">
+          <label for="assess-cell">Cell Number:</label>
+          <input type="number" id="assess-cell" name="cell" maxlength="10" placeholder="Enter your contact number" required />
+        </div>
+        <div class="form-group">
+          <label for="assess-email">Email:</label>
+          <input type="email" id="assess-email" name="email" placeholder="Enter your email address" required />
+        </div>
+        <div class="form-group">
+          <label for="assess-address">Physical Address:</label>
+          <input type="text" id="assess-address" name="address" placeholder="Please enter address of property to be valued" required />
+        </div>
+        <div class="form-group">
+          <label for="assess-reason">Reason:</label>
+          <input type="text" id="assess-reason" name="reason" placeholder="Please enter reason for wanting property to be evaluated" required />
+        </div>
+        <button type="submit" class="button">Submit</button>
+      </form>
+    </div>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -32,6 +60,7 @@
         gap: 20px;
         margin: 0;
         padding: 0;
+          position: relative;
       }
 
       nav li a {
@@ -39,6 +68,40 @@
         padding: 15px;
         color: white;
         font-weight: bold;
+        }
+
+        nav li {
+          position: relative;
+        }
+        nav li .fa-caret-down {
+          margin-left: 5px;
+        }
+        nav .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: rgb(44, 60, 76);
+          min-width: 200px;
+          box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+          z-index: 10;
+          top: 100%;
+          left: 0;
+          border-radius: 0 0 8px 8px;
+        }
+        nav .dropdown-content li {
+          display: block;
+        }
+        nav .dropdown-content li a {
+          color: white;
+          padding: 12px 16px;
+          display: block;
+          font-weight: normal;
+        }
+        nav .dropdown-content li a:hover {
+          background-color: #ba872a;
+          color: #fff;
+        }
+        nav .dropdown:hover .dropdown-content {
+          display: block;
       }
 
       .logo {
@@ -601,12 +664,18 @@
           alt="Realtors Logo"
         />
         <nav>
-          <ul>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Properties</a></li>
-            <li><a href="#">Blogs</a></li>
-            <li><a href="#">Contact Us</a></li>
-          </ul>
+            <ul>
+              <li class="dropdown">
+                <a href="#">About Us <i class="fa fa-caret-down"></i></a>
+                <ul class="dropdown-content">
+                  <li><a href="#">Free Property Assessment</a></li>
+                  <li><a href="#">View Listings</a></li>
+                  <li><a href="#contact">Request a Call Back</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Blogs</a></li>
+              <li><a href="#contact">Contact Us</a></li>
+            </ul>
         </nav>
       </header>
     </section>
@@ -619,6 +688,35 @@
           Estate
         </p>
         <a href="#contact" class="cta-button">Book a Consultation</a>
+  <a href="#contact" class="cta-button" id="request-callback-btn">Request a Call Back</a>
+    <!-- Request a Call Back Modal Form -->
+    <div id="callback-form-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.6); z-index:1000; align-items:center; justify-content:center;">
+      <form id="callback-form" style="background:white; color:black; padding:30px; border-radius:10px; min-width:320px; max-width:90vw; margin:auto; position:relative;">
+        <button type="button" id="close-callback-form" style="position:absolute; top:10px; right:10px; background:none; border:none; font-size:1.5rem; cursor:pointer;">&times;</button>
+        <h2>Request a Call Back</h2>
+        <div class="form-group">
+          <label for="cb-fullname">Full Name:</label>
+          <input type="text" id="cb-fullname" name="fullname" required />
+        </div>
+        <div class="form-group">
+          <label for="cb-cell">Cell Number:</label>
+          <input type="number" id="cb-cell" name="cell" maxlength="10" pattern="\d{10}" required />
+        </div>
+        <div class="form-group">
+          <label for="cb-email">Email Address:</label>
+          <input type="email" id="cb-email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="cb-area">Area:</label>
+          <input type="text" id="cb-area" name="area" placeholder="Enter area you are living" required />
+        </div>
+        <div class="form-group">
+          <label for="cb-buysell">Buy/Sell:</label>
+          <input type="text" id="cb-buysell" name="buysell" placeholder="Are you looking to sell or buy?" required />
+        </div>
+        <button type="submit" class="button">Submit</button>
+      </form>
+    </div>
       </div>
 
       <img class="suzelle" src="./#" alt="Suzelle Pronk" />
@@ -773,5 +871,61 @@
     <!--FGDSJKFHSJL;KFJHSLKFS-->
 
     <script type="module" src="./index.js"></script>
+    <script>
+      // Show assessment form modal when "Free Property Assessment" is clicked
+      document.querySelectorAll('a').forEach(function(link) {
+        if (link.textContent.trim() === 'Free Property Assessment') {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('assessment-form-modal').style.display = 'flex';
+          });
+        }
+      });
+
+      // Hide assessment form modal
+      document.getElementById('close-assessment-form').addEventListener('click', function() {
+        document.getElementById('assessment-form-modal').style.display = 'none';
+      });
+
+      // Hide modal when clicking outside the form
+      document.getElementById('assessment-form-modal').addEventListener('click', function(e) {
+        if (e.target === this) {
+          this.style.display = 'none';
+        }
+      });
+
+      // Enforce 10-digit cell number for assessment form
+      document.getElementById('assess-cell').addEventListener('input', function() {
+        if (this.value.length > 10) {
+          this.value = this.value.slice(0, 10);
+        }
+      });
+    </script>
+    <script>
+      // Show callback form modal
+      document.getElementById('request-callback-btn').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('callback-form-modal').style.display = 'flex';
+      });
+
+      // Hide callback form modal
+      document.getElementById('close-callback-form').addEventListener('click', function() {
+        document.getElementById('callback-form-modal').style.display = 'none';
+      });
+
+      // Optional: Hide modal when clicking outside the form
+      document.getElementById('callback-form-modal').addEventListener('click', function(e) {
+        if (e.target === this) {
+          this.style.display = 'none';
+        }
+      });
+
+      // Optional: Enforce 10-digit cell number
+      document.getElementById('cb-cell').addEventListener('input', function() {
+        if (this.value.length > 10) {
+          this.value = this.value.slice(0, 10);
+        }
+      });
+    </script>
   </body>
 </html>
