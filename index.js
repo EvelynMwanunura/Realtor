@@ -184,13 +184,13 @@ const propertiesForSale = [
       "/loeveinstein3.jpg",
       "/loeveinstein4.jpg",
     ],
-    "6 bedroom house in Loveinstein",
-    "Loveinstein, Cape Town",
-    6495000,
-    6,
-    4,
+    "Spacious 2 bedroom unit in Retirement Village",
+    "Protea Heights, Brackenfell.",
+    3160000,
+    2,
+    2,
     true,
-    "https://www.realtorsinternational.co.za/results/residential/for-sale/bellville/loevenstein/house/17460/"
+    "https://m.realtorsinternational.co.za/results/residential/for-sale/brackenfell/protea-heights/retirement-unit/2930141/#overview"
   ),
   new Property(
     [
@@ -198,24 +198,210 @@ const propertiesForSale = [
       "./loveinstein/Apartment2.jpg",
       "./loveinstein/Apartment3.jpg",
     ],
-    "Apartment with Ocean Views",
-    "Sea Point, Cape Town",
-    8500000,
+    "Renovated Townhouse in Welgelegen",
+    "Welgelegen, Cape Town",
+    2295000,
     2,
-    2,
-    true
+    1,
+    true,
+    "https://www.property24.com/for-sale/welgelegen-2/parow/western-cape/32869/114901899"
   ),
   new Property(
     ["./images/property3.jpg", "./images/property3b.jpg"],
-    "Family Home in Constantia",
-    "Constantia, Cape Town",
-    12000000,
-    5,
-    4,
-    true
+    "3 Bedroom Home with Spacious 1 bedroom flat in Welgelegen",
+    "Welgelegen, Cape Town",
+    4250000,
+    3,
+    2,
+    true,
+    "https://www.realtorsinternational.co.za/results/residential/for-sale/parow/welgelegen/house/2933172/#overview"
+  ),
+
+  new Property(
+    ["../Welgeglen/1.jpg","../Welgeglen/2.jpg","../Welgeglen/3.jpg","../Welgeglen/4.jpg","../Welgeglen/5.jpg","../Welgeglen/6.jpg","../Welgeglen/7.jpg","../Welgeglen/8.jpg","../Welgeglen/9.jpg","../Welgeglen/10.jpg"],
+    "A Rare Find in Welgelegen - Versatile Dual-Living Home",
+    "Welgelegen, Cape Town",
+    8500000,
+    6,
+    6,
+    true,
+    "https://www.realtorsinternational.co.za/results/residential/for-sale/parow/welgelegen/guest-house/2469094/58-diamant-crescent/#overview"
   ),
 ];
 
 propertiesForSale.forEach((property) => {
   propertiesGrid.appendChild(property.render());
 });
+
+// ==== REVIEWS ====
+
+class Review {
+  constructor(name, description, date, stars, link) {
+    this.name = name;
+    this.description = description;
+    this.date = date;
+    this.stars = stars; // 1–5
+    this.link = link;
+  }
+
+  render() {
+    const reviewCard = document.createElement('div');
+    reviewCard.classList.add('review-card');
+
+    // Reviewer name
+    const reviewerName = document.createElement('h3');
+    reviewerName.classList.add('review-name');
+    reviewerName.textContent = this.name;
+
+    // Date
+    const reviewDate = document.createElement('p');
+    reviewDate.classList.add('review-date');
+    reviewDate.textContent = this.date;
+
+    // Star rating
+    const starsContainer = document.createElement('div');
+    starsContainer.classList.add('review-stars');
+    for (let i = 1; i <= 5; i++) {
+      const star = document.createElement('span');
+      star.classList.add('star');
+      star.innerHTML = i <= this.stars ? '★' : '☆';
+      starsContainer.appendChild(star);
+    }
+
+    // Description with see more
+    const reviewText = document.createElement('p');
+    reviewText.classList.add('review-description');
+
+    const truncated = this.description.length > 100 
+      ? this.description.slice(0, 100) + "..." 
+      : this.description;
+
+    reviewText.innerHTML = `${truncated} <br> <a href="${this.link}" target="_blank">see more</a>`;
+
+    // Build card
+    reviewCard.appendChild(reviewerName);
+    reviewCard.appendChild(reviewDate);
+    reviewCard.appendChild(starsContainer);
+    reviewCard.appendChild(reviewText);
+
+    return reviewCard;
+  }
+}
+
+
+// Array of reviews
+const reviews = [
+  new Review(
+    "Ngobizwe Ngubani",
+    "Sandra & Suzelle recently helped our family find our new home. The whole process was complicated because we first had to sell our old home, which introduced a number of challenges from our side. They went out of their way to assist, even went as far as making sure our family is sorted and temporary contingencies are put in place during the process. They really made what was a stressful process rather bearable, from the bottom of our hearts, thank you.",
+    "2 months ago",
+    5,
+    "https://www.facebook.com/reviews/realtorsinternational/posts/pcb.10158220861442921/"
+  ),
+  new Review(
+    "Cheryn May",
+    "We are so grateful for the wonderful service and interaction between ourselves and our agent Sandra. She really went out of her way to ensure that the process was smooth and kept us in the loop with everything.",
+    "a year ago",
+    5,
+    "https://www.facebook.com/reviews/realtorsinternational/posts/pcb.10158220861442921/"
+  ),
+  new Review(
+    "Mathys Van Eyssen",
+    "We had an amazing experience with this great team. Gratefull for their loving and caring hearts.",
+    "3 months ago",
+    5,
+    "https://www.facebook.com/reviews/realtorsinternational/posts/pcb.10158220861442921/"
+  ),
+  new Review(
+    "Sylvia Van Zyl",
+    "Ladies that listen to your every need. Can recommend Suzelle and Sandra from personal experience!",
+    "a year ago",
+    5,
+    "https://www.facebook.com/reviews/realtorsinternational/posts/pcb.10158220861442921/"
+  )
+];
+
+// Render reviews
+const reviewsContainer = document.getElementById("reviews");
+if (reviewsContainer) {
+  reviews.forEach(review => {
+    reviewsContainer.appendChild(review.render());
+  });
+}
+
+// ==== BLOG SECTION ====
+
+class BlogSection {
+  constructor(containerId, posts) {
+    this.container = document.getElementById(containerId);
+    this.posts = posts;
+  }
+
+  render() {
+    if (!this.container) {
+      console.warn(`Blog container with id "${containerId}" not found.`);
+      return;
+    }
+
+    const section = document.createElement('section');
+    section.id = 'blog';
+    section.classList.add('blog-section');
+
+    const heading = document.createElement('h2');
+    heading.textContent = 'Latest From Our Blog';
+    section.appendChild(heading);
+
+    const blogContainer = document.createElement('div');
+    blogContainer.classList.add('blog-container');
+
+    this.posts.forEach(post => {
+      const blogPost = document.createElement('div');
+      blogPost.classList.add('blog-post');
+
+      blogPost.innerHTML = `
+        <img src="${post.image}" alt="${post.alt}" />
+        <h3>${post.title}</h3>
+        <p class="date">${post.date}</p>
+        <p>${post.description}</p>
+        <a href="${post.link}" class="read-more">Read More</a>
+      `;
+
+      blogContainer.appendChild(blogPost);
+    });
+
+    section.appendChild(blogContainer);
+    this.container.appendChild(section);
+  }
+}
+
+// Blog posts data
+const blogPosts = [
+  {
+    image: './images/blog1.jpg',
+    alt: 'Cape Town Lifestyle',
+    title: 'How to tell the difference between a buyers’ and a sellers’ market',
+    date: 'September 23, 2025',
+    description: "",
+    link: '#'
+  },
+  {
+    image: './images/blog2.jpg',
+    alt: 'Investment Tips',
+    title: 'Smart Investment Strategies in the Cape Town Property Market',
+    date: 'October 15, 2023',
+    description: 'Get expert insights into making sound property investments in Cape Town. Understand current trends and future growth potential.',
+    link: '#'
+  },
+  {
+    image: './images/blog3.jpg',
+    alt: 'Seafront Property',
+    title: 'The Appeal of Living in the Western Cape',
+    date: 'October 5, 2023',
+    description: 'Experience the luxury and lifestyle benefits of owning a property along the stunning coastline of the Western Cape.',
+    link: '#'
+  }
+];
+
+// Render blog
+const blog = new BlogSection('blog', blogPosts);
+blog.render();
