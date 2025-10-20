@@ -141,9 +141,16 @@ nav .dropdown:hover .dropdown-content {
 | INTRO / HERO SECTION
 |--------------------------------------------------------------------------
 */
+
+/*
+|--------------------------------------------------------------------------
+| INTRO / HERO SECTION (Refined for aesthetics, but keeping structure)
+|--------------------------------------------------------------------------
+*/
+
 .intro {
     position: relative;
-    height: 950px; /* ✨ REFINEMENT: Slightly reduced height for better viewport balance */
+    height: 950px;
     width: 100%;
     overflow: hidden;
 }
@@ -153,35 +160,34 @@ nav .dropdown:hover .dropdown-content {
     position: absolute;
     inset: 0;
     background-image: url(./landingPage.jpg);
-    /* ✨ REFINEMENT: Using 'cover' for better scaling */
-    background-size: cover;
+    /* Use 'cover' for better scaling */
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     z-index: 0;
-    /* ✨ REFINEMENT: Subtle darkening overlay for text contrast */
-    background-color: rgba(0, 0, 0, 0.4);
+    /* Use dark color with opacity for subtle darkening overlay */
+    background-color: rgba(0, 0, 0, 0.4); 
     background-blend-mode: darken;
 }
 
 .intro-text {
     position: absolute;
-    top: 50%; /* Center vertically */
-    left: 50%;
-    transform: translate(-50%, -50%); /* Center perfectly */
+    top: 40%;
+    left: 25%;
+    transform: translate(-50%, -50%);
     text-align: center;
     color: var(--color-white);
     z-index: 2;
     padding: 40px;
-    /* ✨ REFINEMENT: Cleaner, less opaque background for focus */
-    background-color: rgba(0, 0, 0, 0.65);
+    /* Use dark color with a little more opacity for the text block background */
+    background-color: rgba(44, 60, 76, 0.65);
     border-radius: 12px;
-    max-width: 600px; /* Fixed max width for better readability */
-    /* ✨ REFINEMENT: Soft shadow on the text box */
+    max-width: 600px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .intro-text h1 {
-    font-size: 3rem; /* Larger heading */
+    font-size: 3rem;
     margin-bottom: 15px;
     color: var(--color-white);
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
@@ -193,6 +199,19 @@ nav .dropdown:hover .dropdown-content {
     color: #f0f0f0;
 }
 
+
+/*
+|--------------------------------------------------------------------------
+| CONTACT BLOCK (High-Contrast, Premium Focus)
+|--------------------------------------------------------------------------
+*/
+
+
+
+
+/*
+
+*/
 .cta-button {
     /* ✨ REFINEMENT: Use the accent color for a striking CTA */
     background-color: var(--color-accent);

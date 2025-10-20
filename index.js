@@ -271,12 +271,9 @@ class Review {
     // Description with see more
     const reviewText = document.createElement('p');
     reviewText.classList.add('review-description');
+    reviewText.textContent = this.description;
 
-    const truncated = this.description.length > 100 
-      ? this.description.slice(0, 100) + "..." 
-      : this.description;
-
-    reviewText.innerHTML = `${truncated} <br> <a href="${this.link}" target="_blank">see more</a>`;
+   
 
     // Build card
     reviewCard.appendChild(reviewerName);
@@ -295,29 +292,28 @@ const reviews = [
     "Ngobizwe Ngubani",
     "Sandra & Suzelle recently helped our family find our new home. The whole process was complicated because we first had to sell our old home, which introduced a number of challenges from our side. They went out of their way to assist, even went as far as making sure our family is sorted and temporary contingencies are put in place during the process. They really made what was a stressful process rather bearable, from the bottom of our hearts, thank you.",
     "2 months ago",
-    5,
-    "https://www.facebook.com/reviews/realtorsinternational/posts/pcb.10158220861442921/"
+    5
+   
   ),
   new Review(
     "Cheryn May",
     "We are so grateful for the wonderful service and interaction between ourselves and our agent Sandra. She really went out of her way to ensure that the process was smooth and kept us in the loop with everything.",
     "a year ago",
-    5,
-    "https://www.facebook.com/reviews/realtorsinternational/posts/pcb.10158220861442921/"
+    5
+    
   ),
   new Review(
     "Mathys Van Eyssen",
     "We had an amazing experience with this great team. Gratefull for their loving and caring hearts.",
     "3 months ago",
-    5,
-    "https://www.facebook.com/reviews/realtorsinternational/posts/pcb.10158220861442921/"
+    5
+    
   ),
   new Review(
     "Sylvia Van Zyl",
     "Ladies that listen to your every need. Can recommend Suzelle and Sandra from personal experience!",
     "a year ago",
-    5,
-    "https://www.facebook.com/reviews/realtorsinternational/posts/pcb.10158220861442921/"
+    5
   )
 ];
 

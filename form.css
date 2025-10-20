@@ -1,83 +1,130 @@
 .contact-block {
     position: absolute;
-    top: 33%;
-    right: 12%;
-     transform: translateY(-50%);
-    width: 350px;
-    padding: 30px;
+    top: 40%;
+    right: 10%; /* Closer to the edge for better visual grouping */
+    transform: translateY(-50%);
+    width: 380px;
+    padding: 40px; 
     box-sizing: border-box;
-    background-color: rgba(146, 133, 133, 0.7);
-    color: #fff;
+    /* Use --color-dark with high opacity for strong contrast */
+    background-color: rgba(44, 60, 76, 0.95);
+    color: var(--color-white);
+    /* Stronger, softer shadow to lift it off the background */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
 }
 
 .contact-title {
-    font-size: 1.8em;
-    font-weight: 300;
-    margin-bottom: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    padding-bottom: 10px;
+    font-size: 2em;
+    font-weight: 500;
+    margin-bottom: 25px;
+    /* Use --color-accent for the border */
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 15px;
+    color: var(--color-white); /* Ensure title remains white */
 }
 
-.step-number {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    line-height: 20px;
-    text-align: center;
+#step-number {
+    /* Larger number circle with high contrast colors */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 28px;
+    font-size: 1em;
     border-radius: 50%;
-    background-color: #fff;
-    color: #000;
-    font-weight: bold;
-    margin-right: 5px;
+    /* Accent background, dark text */
+    background-color: var(--color-accent);
+    color: var(--color-dark);
+    font-weight: 700;
+    margin-right: 8px;
 }
 
 .phone-number {
     display: block;
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #fff;
+    font-size: 1.8em;
+    font-weight: 700;
+    /* Accent color for high visibility */
+    color: var(--color-accent);
     text-decoration: none;
-    margin-top: 5px;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    transition: color 0.3s;
+}
+
+.phone-number:hover {
+    color: var(--color-white);
 }
 
 .contact-form-container {
     display: block;
-    font-size: 0.9em;
-    margin-top: 5px;
-    margin-bottom: 10px;
+    font-size: 1em;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    color: #ccc;
 }
 
 .contact-form input {
     width: 100%;
-    padding: 12px;
+    padding: 8px; 
     margin-bottom: 15px;
-    border: none;
-    background-color: #fff;
+    border: 1px solid #ddd;
+    /* Use a light, off-white for the input background */
+    background-color: var(--color-white); 
     color: #333;
     font-size: 1em;
     box-sizing: border-box;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus {
+    /* Accent focus highlight */
+    border-color: var(--color-accent);
+    outline: none;
 }
 
 .send-button {
     width: 100%;
     padding: 15px;
     border: none;
-    background-color: #B9A56E;
-    color: #333;
-    font-weight: bold;
+    /* Use accent color for the main CTA button */
+    background-color: var(--color-accent);
+    color: var(--color-dark); /* Dark text for contrast */
+    font-weight: 700;
     cursor: pointer;
     text-transform: uppercase;
-    margin-top: 5px;
-    transition: background-color 0.3s;
+    margin-top: 10px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 .send-button:hover {
-    background-color: #c9b57e;
+    background-color: #d8a649; /* Slightly lighter accent on hover */
+    transform: translateY(-2px);
 }
 
 .whatsapp-option {
-    margin-top: 20px;
+    margin-top: 25px;
     display: block;
-    align-items: center;
+    text-align: center;
+    color: #ccc;
+    font-size: 0.95em;
+}
+
+.whatsapp-option a {
+    display: inline-block;
+    color: var(--color-white);
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 8px;
+    padding: 8px 15px;
+    background-color: #25d366; /* Standard WhatsApp Green */
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.whatsapp-option a:hover {
+    background-color: #128c7e; /* Darker green on hover */
 }
