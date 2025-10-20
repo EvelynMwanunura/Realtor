@@ -401,3 +401,6 @@ const blogPosts = [
 // Render blog
 const blog = new BlogSection('blog', blogPosts);
 blog.render();
+
+
+document.getElementById('current-year').textContent = new Date().getFullYear();
