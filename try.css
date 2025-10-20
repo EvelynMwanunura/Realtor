@@ -143,7 +143,7 @@ nav .dropdown:hover .dropdown-content {
 */
 .intro {
     position: relative;
-    height: 950px; /* ✨ REFINEMENT: Slightly reduced height for better viewport balance */
+    height: 700px; /* ✨ REFINEMENT: Slightly reduced height for better viewport balance */
     width: 100%;
     overflow: hidden;
 }
@@ -846,11 +846,4 @@ nav .dropdown:hover .dropdown-content {
     color: var(--color-accent);
     text-decoration: none;
     font-weight: 500;
-}
-
-.contactUsh1{
-    text-align: center;
-    margin-top: 40px;
-    font-size: 3rem;
-    color: var(--color-dark);
 }
