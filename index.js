@@ -16,6 +16,9 @@ if (closeCallbackBtn) {
   });
 }
 
+
+
+
 // Hide callback modal when clicking outside the form
 const callbackModal = document.getElementById('callback-form-modal');
 if (callbackModal) {
@@ -72,6 +75,28 @@ if (assessCell) {
     }
   });
 }
+
+
+
+
+
+  const mobileMenu = document.getElementById("mobile-menu");
+  const navList = document.querySelector("nav ul");
+  const dropdowns = document.querySelectorAll(".dropdown");
+
+  mobileMenu.addEventListener("click", () => {
+    navList.classList.toggle("show");
+  });
+
+  dropdowns.forEach((dropdown) => {
+    dropdown.addEventListener("click", (e) => {
+      // stops link behavior on click
+      e.preventDefault();
+      dropdown.classList.toggle("open");
+    });
+  });
+
+
 
 // ...existing property rendering code below...
 class Property {
