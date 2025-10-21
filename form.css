@@ -1,9 +1,10 @@
+
 .contact-block {
     position: absolute;
     top: 40%;
     right: 10%; /* Closer to the edge for better visual grouping */
     transform: translateY(-50%);
-    width: 380px;
+    width: 380px; /* Fixed width for desktop appeal */
     padding: 40px; 
     box-sizing: border-box;
     /* Use --color-dark with high opacity for strong contrast */
@@ -12,6 +13,9 @@
     /* Stronger, softer shadow to lift it off the background */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     border-radius: 10px;
+    /* Ensure smooth transitions if properties change */
+    transition: all 0.3s ease-in-out;
+ 
 }
 
 .contact-title {
@@ -128,3 +132,21 @@
 .whatsapp-option a:hover {
     background-color: #128c7e; /* Darker green on hover */
 }
+
+@media(max-width: 768px) {
+   .contact-block {
+  
+        position: relative;
+        transform: none;
+        top: auto;
+        right: auto;
+        margin: 20px auto 50px auto;
+        width: 90%;
+        max-width: 500px;
+        padding: 30px 20px;
+        background-color: var(--color-dark);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        order: 2; /* FORCES CONTACT BLOCK TO APPEAR SECOND */
+    }
+}
+    

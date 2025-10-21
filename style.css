@@ -143,10 +143,15 @@ nav .dropdown:hover .dropdown-content {
 */
 
 /*
+
+
+
 |--------------------------------------------------------------------------
 | INTRO / HERO SECTION (Refined for aesthetics, but keeping structure)
 |--------------------------------------------------------------------------
 */
+
+
 
 .intro {
     position: relative;
@@ -198,6 +203,53 @@ nav .dropdown:hover .dropdown-content {
     margin-bottom: 30px;
     color: #f0f0f0;
 }
+
+
+
+@media (max-width: 1000px) {
+    /* Adjust positioning on the intro text to prevent collision on smaller desktops */
+    .intro-text {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 90%;
+        top: 20%; /* Move the hero text up */
+    }
+
+    .intro-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .intro::before {
+        /* Ensure the background image covers the whole area */
+        background-size: cover;
+    }
+}
+
+@media (max-width: 768px) {
+    .intro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        min-height: 950px;
+        padding-bottom: 50px;
+        position: relative;
+    }
+
+    .intro-text {
+        position: relative;
+        transform: none;
+        top: 0;
+        left: 0;
+        margin: 50px auto 30px auto;
+        max-width: 90%;
+        order: 1; /* Intro text first */
+    }
+}
+
+
+    /* 3. Make Contact Block Responsive and Force it to Order 2 */
+   
 
 
 /*
