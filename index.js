@@ -243,7 +243,7 @@ const propertiesForSale = [
   ),
 
   new Property(
-    ["../Welgeglen/1.jpg","../Welgeglen/2.jpg","../Welgeglen/3.jpg","../Welgeglen/4.jpg","../Welgeglen/5.jpg","../Welgeglen/6.jpg","../Welgeglen/7.jpg","../Welgeglen/8.jpg","../Welgeglen/9.jpg","../Welgeglen/10.jpg"],
+    ["./Welgeglen/1.jpg","./Welgeglen/2.jpg","./Welgeglen/3.jpg","./Welgeglen/4.jpg","./Welgeglen/5.jpg","./Welgeglen/6.jpg","./Welgeglen/7.jpg","./Welgeglen/8.jpg","./Welgeglen/9.jpg","./Welgeglen/10.jpg"],
     "A Rare Find in Welgelegen - Versatile Dual-Living Home",
     "Welgelegen, Cape Town",
     8500000,
